@@ -1,8 +1,10 @@
 from flask import Flask
 from flask import render_template
+from flask_bootstrap import Bootstrap
 
 
 app = Flask(__name__)
+Bootstrap(app)
 
 
 @app.route('/dinner/')
@@ -10,7 +12,12 @@ app = Flask(__name__)
 def eat(food=None):
     return render_template(
         'food.html',
-        food=food
+        food=food,
+        list=[
+            'pizza',
+            'sushi',
+            'quinoa'
+        ]
     )
 
 
