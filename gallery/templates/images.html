@@ -1,0 +1,17 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Database images{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+	<p>Images</p>
+		<ul>
+		{% for n in images %}
+			<li>{{n.URL}} : {{n.appuser.email}}</li>
+		{% endfor %}
+		</ul>
+</div>
+
+{% endblock %}
