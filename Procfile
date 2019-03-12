@@ -1,1 +1,1 @@
-web: gunicorn gallery:app
+heroku ps:scale web=1
