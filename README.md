@@ -1,7 +1,7 @@
-# Image Uploading
+# Simple imageboard
 
-This application represents an image uploading service where authenticated users can upload, view and delete images.
-To make this application work, you need to have a PostgreSQL database and an Azure's container for storing blob files (images).
+This application represents an imageboard where authenticated users can upload, view and delete images.
+To make this application work, you need to have a database's URI and an Azure's container for storing blob files (images).
 Credentials that you have to supply must be in the gallery/config.py file.
 
 How it looks like:
