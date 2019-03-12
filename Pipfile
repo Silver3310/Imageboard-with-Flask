@@ -15,6 +15,7 @@ psycopg2-binary = "*"
 flask-sqlalchemy = "*"
 flask-login = "*"
 gallery = {path = ".",editable = true}
+flask-wtf = "*"
 
 [requires]
 python_version = "3.6"

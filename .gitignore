@@ -153,3 +153,5 @@ fabric.properties
 # Notes
 notes/
 
+# configs
+gallery/config.py
