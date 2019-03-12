@@ -20,6 +20,12 @@ def user_loader(user_id):
     return models.LoginUser.query.get(user_id)
 
 
+@login_manager.unauthorized_handler
+def unauthorized_callback():
+    flash("You must be logged in to perform this action")
+    return redirect('/login')
+
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if current_user.is_authenticated:
@@ -49,6 +55,7 @@ def allowed_file(filename):
 
 
 @app.route('/', methods=['POST'])
+@login_required
 def process_file():
     if len(list(request.form.keys())) > 0 and request.form["delete"]:
         delete_file_from_azure(request.form["delete"])
