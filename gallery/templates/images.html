@@ -2,16 +2,36 @@
 
 {% block title %}Database images{% endblock %}
 
+
 {% block content %}
 
 <div class="container">
 
 	<p>Images</p>
-		<ul>
-		{% for n in images %}
-			<li>{{n.URL}} : {{n.appuser.email}}</li>
-		{% endfor %}
-		</ul>
+
+			
+		<div class="row text-center text-lg-left">
+			{% for n in images %}
+			<form action="/" method="POST">
+				<div class="col-lg-3 col-md-4 col-xs-6">
+					<a href="{{config.AZURE_STORAGE_CONTAINER_LOCATION}}{{n.name}}" class="d-block mb-4 h-100">
+						<img class="img-fluid img-thumbnail"  src={{config.AZURE_STORAGE_CONTAINER_LOCATION}}{{n.name}}>
+						<input type=hidden name="delete" value={{n.name}}>
+					</a><button type="submit" class="btn btn-primary" name={{n.name}}>Delete</button>
+				</div>
+			</form>
+			{% endfor %}	
+		</div>
+
+		
+		<form action="/" method="POST" enctype="multipart/form-data">
+			<div class="form-group">
+					<label for="user_file">Upload Your File</label>
+					<input type="file" class="form-control" placeholder="Filename" name="user_file">
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	
 </div>
 
 {% endblock %}

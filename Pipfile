@@ -14,8 +14,9 @@ psycopg2 = "*"
 psycopg2-binary = "*"
 flask-sqlalchemy = "*"
 flask-login = "*"
-gallery = {path = ".",editable = true}
+gallery = {editable = true,path = "."}
 flask-wtf = "*"
+flask-azure-storage = "*"
 
 [requires]
 python_version = "3.6"
