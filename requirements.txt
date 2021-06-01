@@ -27,7 +27,7 @@ python-dateutil==2.8.0
 requests==2.21.0
 six==1.12.0
 sqlalchemy==1.3.1
-urllib3==1.24.1
+urllib3==1.26.5
 visitor==0.1.3
 werkzeug==0.14.1
 wtforms==2.2.1
